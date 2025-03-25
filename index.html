@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pollution Geographies</title>
+  <!-- Import ECharts and ECharts-GL libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header title -->
+  <header>
+    <div class="title">Pollution Geographies</div>
+  </header>
+
+  <!-- Main area: left poem panel and right globe panel -->
+  <div class="main-content">
+    <!-- Left panel: Display the first stanza of the poem -->
+    <div class="left-column">
+      <div class="left-column-content">
+        <div class="verse-title">I. NO2 Sonata (USA vs China)</div>
+        <p class="line active-line">One crimson fuselage gnats at Texas shale—</p>
+        <p class="line">Americana lags behind the serpentine Asian dragon,</p>
+        <p class="line">four rusted beehives mark Beijing’s exaltation:</p>
+        <p class="line">factory rejects disgorging matter into heaven,</p>
+        <p class="line">each smokestack quartering the sky’s aorta.</p>
+      </div>
+    </div>
+
+    <!-- Right panel: Globe component, Pollutant Selector, Legend, and Info Window -->
+    <div class="right-column">
+      <!-- Pollutant type selector (Top Left) -->
+      <div id="pollutantSelector" class="pollutant-selector">
+        <label for="pollutantSelect">Select Pollutant:</label>
+        <select id="pollutantSelect">
+          <option value="AQI">AQI</option>
+          <option value="NO2">NO2</option>
+          <option value="O3">O3</option>
+          <option value="CO2">CO2</option>
+          <option value="PM2.5">PM2.5</option>
+        </select>
+      </div>
+      <!-- Pollution legend (Top Right) -->
+      <div id="pollutionLegend" class="pollution-legend">
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: green;"></span>
+          <span class="legend-label">Good</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: yellow;"></span>
+          <span class="legend-label">Moderate</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: orange;"></span>
+          <span class="legend-label">Unhealthy for Sensitive Groups</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: red;"></span>
+          <span class="legend-label">Unhealthy</span>
+        </div>
+      </div>
+      <!-- Globe container -->
+      <div id="globeContainer"></div>
+      <!-- Info Window (Bottom Left) -->
+      <div id="infoWindow" class="info-window">
+        <div class="info-title">
+          <span class="info-country"><strong>USA</strong></span>,
+          <span class="info-city">New York City</span>
+        </div>
+        <div class="info-values">
+          <span><strong>AQI: </strong><span class="value-aqi">75</span></span> |
+          <span><strong>CO2: </strong><span class="value-co">1.2</span></span> |
+          <span><strong>O3: </strong><span class="value-ozone">60</span></span> |
+          <span><strong>NO2: </strong><span class="value-no2">40</span></span> |
+          <span><strong>PM 2.5: </strong><span class="value-pm25">35</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer: Static navigation buttons -->
+  <footer>
+    <button class="arrow-button">← Previous</button>
+    <button class="arrow-button">Next →</button>
+  </footer>
+
+  <!-- Link to external JS file -->
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+/* Base settings for page and layout */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent page scrolling */
+    background-color: #444; /* Matches the globe's background */
+    font-family: Arial, sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  /* Capitalize the first letter of each line */
+  .line::first-letter {
+    text-transform: uppercase;
+  }
+  
+  /* Header: Title bar */
+  header {
+    flex: 0 0 auto;
+    height: 100px;
+    background-color: #34495E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .title {
+    font-size: 2rem; /* Large title font size */
+    font-weight: bold;
+  }
+  
+  /* Main content: left-side poem and right-side globe */
+  .main-content {
+    flex: 1 1 auto; /* Occupy remaining space */
+    display: flex;
+  }
+  
+  /* Left panel: increased width for poem display */
+  .left-column {
+    width: 450px;
+    background-color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .left-column-content {
+    max-width: 90%;
+    text-align: left;
+  }
+  /* Subtitle: bold and centered */
+  .verse-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .line {
+    margin-bottom: 6px;
+    margin-left: 10px; /* Keep left margin for highlighted text */
+    line-height: 1.6;
+  }
+  /* Non-highlighted lines have a color close to the background */
+  .left-column .line:not(.active-line) {
+    color: #F0F0F0;
+  }
+  /* Highlight the first line */
+  .active-line {
+    background-color: #ddd;
+    color: #000;
+  }
+  
+  /* Right panel: Globe container */
+  .right-column {
+    flex: 1; /* Occupies remaining width */
+    position: relative;
+  }
+  #globeContainer {
+    width: 100%;
+    height: 100%;
+  }
+  /* Pollution Legend - positioned at the top right */
+  .pollution-legend {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 10;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  .legend-item:last-child {
+    margin-bottom: 0;
+  }
+  .legend-color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border: 1px solid #fff;
+  }
+  /* Pollutant Selector - positioned at the top left */
+  .pollutant-selector {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 10;
+  }
+  /* Info Window - positioned at the bottom left of the globe */
+  .info-window {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    border-radius: 8px;
+    color: #333;
+    font-size: 14px;
+    z-index: 10;
+  }
+  .info-title {
+    margin-bottom: 5px;
+  }
+  .info-values span {
+    margin-right: 8px;
+  }
+  
+  /* Footer: Static Previous/Next buttons */
+  footer {
+    flex: 0 0 auto;
+    height: 50px;
+    background-color: #34495E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  .arrow-button {
+    font-size: 12px;
+    padding: 5px 15px;
+    margin: 0 10px;
+    background-color: #666;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+  }
+  .arrow-button:hover {
+    background-color: #777;
+  }
+  #globeContainer {
+    cursor: default;
+}
+  

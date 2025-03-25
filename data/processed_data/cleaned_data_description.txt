@@ -1,0 +1,4 @@
+Initial rows: 16695
+Rows after dropping missing values: 16393
+Number of duplicates (country and city) found: 2437
+Rows after removing duplicates: 13956
